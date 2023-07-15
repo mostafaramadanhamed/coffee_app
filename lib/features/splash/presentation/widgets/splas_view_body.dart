@@ -1,4 +1,5 @@
 import 'package:coffee_app/core/utils/assets.dart';
+import 'package:coffee_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 class SplashViewBody extends StatelessWidget {
   const SplashViewBody({Key? key}) : super(key: key);
@@ -11,8 +12,8 @@ class SplashViewBody extends StatelessWidget {
       width: size.width,
       decoration: BoxDecoration(
         gradient: RadialGradient(colors: [
-          const Color(0xFFF9EBDF),
-          const Color(0xFFECCBAC).withOpacity(0.81),
+         AppColors.kFirstGradientColor,
+         AppColors.kSecondGradientColor.withOpacity(0.81),
         ]),
       ),
       child:  Column(
