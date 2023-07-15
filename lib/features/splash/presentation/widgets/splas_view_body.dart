@@ -14,9 +14,11 @@ class SplashViewBody extends StatelessWidget {
           const Color(0xFFECCBAC).withOpacity(0.81),
         ]),
       ),
-      child: const Column(
+      child:  Column(
         children: [
-
+          SizedBox(height: size.height/6.7,),
+          Image.asset('assets/images/logo.png',width: size.width,height: size.height/2,),
+          Text('Grand Coffee')
         ],
       ),
     );
