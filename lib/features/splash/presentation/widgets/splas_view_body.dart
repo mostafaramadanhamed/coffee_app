@@ -1,3 +1,4 @@
+import 'package:coffee_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 class SplashViewBody extends StatelessWidget {
   const SplashViewBody({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class SplashViewBody extends StatelessWidget {
       child:  Column(
         children: [
           SizedBox(height: size.height/6.7,),
-          Image.asset('assets/images/logo.png',width: size.width,height: size.height/2,),
+          Image.asset(AppAssets.kLogoPath,width: size.width,height: size.height/2,),
           Text('Grand Coffee')
         ],
       ),
