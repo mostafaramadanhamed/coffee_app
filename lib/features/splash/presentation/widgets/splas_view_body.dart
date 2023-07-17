@@ -49,12 +49,12 @@ class _SplashViewBodyState extends State<SplashViewBody> with TickerProviderStat
     );
   }
   void navigateToLanding() {
-    Future.delayed(const Duration(milliseconds: 2500,),(){
+    Future.delayed(const Duration(milliseconds: 3000,),(){
       GoRouter.of(context).push(AppStrings.kLandingRoute);
     });
   }
   void initAnimation() {
-    animationController = AnimationController(vsync: this,duration: const Duration(seconds: 1));
+    animationController = AnimationController(vsync: this,duration: const Duration(milliseconds: 900));
     slidingAnimation=Tween<Offset>(
       begin:const Offset(0, 5) ,
       end:Offset.zero ,

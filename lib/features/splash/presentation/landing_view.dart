@@ -1,3 +1,4 @@
+import 'package:coffee_app/features/splash/presentation/widgets/landing_view_body.dart';
 import 'package:flutter/material.dart';
 
 class LandingView extends StatelessWidget {
@@ -5,8 +6,8 @@ class LandingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
+    return const Scaffold(
+      body: LandingViewBody(),
     );
   }
 }

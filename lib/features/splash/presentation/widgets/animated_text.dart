@@ -15,7 +15,7 @@ class AnimatedText extends StatelessWidget {
     return AnimatedBuilder(animation: slidingAnimation,
       builder: (BuildContext context, Widget? child) {
         return SlideTransition(position: slidingAnimation,
-            child: Text(AppStrings.kAppName,style: Styles.textStyle24,));
+            child: const Text(AppStrings.kAppName,style: Styles.textStyle24,));
       },
     );
   }
