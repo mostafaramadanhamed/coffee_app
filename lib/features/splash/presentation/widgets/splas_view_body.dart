@@ -3,6 +3,8 @@ import 'package:coffee_app/core/utils/colors.dart';
 import 'package:coffee_app/core/utils/string.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import 'animated_text.dart';
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
 
