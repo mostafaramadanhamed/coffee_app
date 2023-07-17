@@ -1,4 +1,4 @@
-import 'package:coffee_app/features/splash/presentation/splash_view.dart';
+import 'package:coffee_app/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return  MaterialApp.router(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      routerConfig: ,
+      routerConfig: AppRouter.router,
     );
   }
 }
