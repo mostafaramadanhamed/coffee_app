@@ -11,4 +11,8 @@ abstract class Styles{
     fontSize: 20,
     color: AppColors.kPrimaryColor,
   );
+  static const textStyle18 = TextStyle(
+    fontSize: 18,
+    color: AppColors.kPrimaryColor,
+  );
 }
