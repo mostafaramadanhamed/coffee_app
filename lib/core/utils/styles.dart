@@ -1,14 +1,14 @@
+import 'package:coffee_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 abstract class Styles{
   static const textStyle24 = TextStyle(
     fontSize: 24,
-    color: Color(0xff3C2513)
+    color: AppColors.kPrimaryColor,
   );
 
   static const textStyle20 = TextStyle(
     fontSize: 20,
-    color: Color(0xff3C2513)
+    color: AppColors.kPrimaryColor,
   );
 }

@@ -1,3 +1,4 @@
+import 'package:coffee_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -25,10 +26,10 @@ class LandingButton extends StatelessWidget {
           child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-                color: const Color(0xFFD1D0D7),
+                color: AppColors.kLandingButtonColor ,
                 borderRadius: BorderRadius.circular(32),
                 boxShadow: const [
-                  BoxShadow(color: Color(0xff1B1B1B), spreadRadius: 2,)
+                  BoxShadow(color: AppColors.kPrimaryColor, blurRadius: 2,spreadRadius: 2,)
                 ]
             ),
 
