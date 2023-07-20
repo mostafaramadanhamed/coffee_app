@@ -1,5 +1,6 @@
 import 'package:coffee_app/core/utils/assets.dart';
 import 'package:coffee_app/core/utils/colors.dart';
+import 'package:coffee_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -7,25 +8,52 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 32),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 32),
       child: Column(
         children: [
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: 45,
           ),
-          Row(
-            children: [
-              CircleAvatar(
-                radius: 25,
-                backgroundColor: AppColors.kFirstGradientColor,
-                child: Image.asset(AppAssets.kLogoPath),
-              ),
-
-            ],
-          )
+          TopRowHomeView(),
         ],
       ),
+    );
+  }
+}
+
+class TopRowHomeView extends StatelessWidget {
+  const TopRowHomeView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+      children: [
+        ProfileImage(),
+        SizedBox(width: 20,),
+        Icon(Icons.location_on_rounded,color: AppColors.kSecondaryColor,size: 20,),
+        SizedBox(width: 15,),
+        Text('Cairo,Egypt ',style: Styles.textStyle14,),
+        Spacer(),
+        Icon(Icons.notifications_active_outlined,color: AppColors.kSecondaryColor,size: 24,),
+      ],
+    );
+  }
+}
+
+class ProfileImage extends StatelessWidget {
+  const ProfileImage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      radius: 30,
+      backgroundColor: AppColors.kFirstGradientColor,
+      child: Image.asset(AppAssets.kLogoPath),
     );
   }
 }
