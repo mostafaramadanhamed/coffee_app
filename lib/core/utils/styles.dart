@@ -15,4 +15,12 @@ abstract class Styles{
     fontSize: 18,
     color: AppColors.kPrimaryColor,
   );
+  static const textStyle16 = TextStyle(
+    fontSize: 16,
+    color: AppColors.kPrimaryColor,
+  );
+  static const textStyle14 = TextStyle(
+    fontSize: 14,
+    color: AppColors.kPrimaryColor,
+  );
 }

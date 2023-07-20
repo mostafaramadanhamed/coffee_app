@@ -23,15 +23,36 @@ class LoginViewBody extends StatelessWidget {
             color: AppColors.kLoginContainerColor.withOpacity(0.59),
             borderRadius: BorderRadius.circular(32),
           ),
-          child: const SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+          child:  SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
-                Text('Login',style: Styles.textStyle18,),
-                SizedBox(height: 38,),
-                CustomTextFiled(hint: 'Email'),
-                SizedBox(height: 22,),
-                CustomTextFiled(hint: 'Password'),
+                const   Text('Login',style: Styles.textStyle18,),
+                const   SizedBox(height: 38,),
+                const  CustomTextFiled(hint: 'Email'),
+                const  SizedBox(height: 22,),
+                const   CustomTextFiled(hint: 'Password'),
+                const SizedBox(height: 40,),
+                TextButton(onPressed: (){}, child: Text("Enter",style: Styles.textStyle16,),
+                style: TextButton.styleFrom(
+                  backgroundColor: AppColors.kLoginTextFieldColor,
+                  elevation: 8,
+                  foregroundColor: AppColors.kSecondaryColor,
+                  shadowColor: AppColors.kSecondaryColor,
+                  minimumSize: Size(size.width/3, size.height/17),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32),side: const BorderSide(
+                    width: 2,
+                    strokeAlign: BorderSide.strokeAlignOutside,
+                    color: AppColors.kSecondaryColor,
+                  ))
+
+                ),
+                ),
+                const  SizedBox(height: 22,),
+                TextButton(onPressed: (){}, child: Text('Don\'t have an account?',style: Styles.textStyle14,),
+                style: TextButton.styleFrom(
+                  foregroundColor: AppColors.kSecondaryColor,
+                ),),
               ],
             ),
           ),
