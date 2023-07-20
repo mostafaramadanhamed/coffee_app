@@ -1,24 +1,46 @@
 import 'package:coffee_app/core/utils/assets.dart';
 import 'package:coffee_app/core/utils/colors.dart';
 import 'package:coffee_app/core/utils/styles.dart';
+import 'package:coffee_app/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 32),
+    return  const Padding(
+      padding:EdgeInsets.symmetric(horizontal: 32),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: 45,
           ),
           TopRowHomeView(),
+          SizedBox(
+            height: 20,
+          ),
+          WelcomeText(),
+          SizedBox(
+            height: 20,
+          ),
+          CustomTextFiled(hint: '  🔎 Search ')
         ],
       ),
     );
+  }
+}
+
+class WelcomeText extends StatelessWidget {
+  const WelcomeText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Good Morning, Mostafa ☕',style: GoogleFonts.lato(fontSize: 20,fontWeight: FontWeight.w900,color: AppColors.kPrimaryColor,),);
   }
 }
 

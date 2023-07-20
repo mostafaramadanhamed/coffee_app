@@ -12,19 +12,22 @@ class LoginButton extends StatelessWidget {
     super.key,
     required this.emailController,
     required this.passwordController,
-    required this.size,
+    required this.size, required this.formKey,
   });
 
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final Size size;
-
+  final GlobalKey<FormState> formKey ;
   @override
   Widget build(BuildContext context) {
-    return TextButton(onPressed: (){
-      if(emailController.text=='mo'&& passwordController.text=='00'){
+
+    return TextButton(onPressed: () {
+      if(formKey.currentState!.validate()){
+      if (emailController.text == 'mo' && passwordController.text == '00') {
         GoRouter.of(context).push(AppStrings.kHomeRoute);
       }
+    }
     },
       style: TextButton.styleFrom(
           backgroundColor: AppColors.kLoginTextFieldColor,
@@ -38,7 +41,7 @@ class LoginButton extends StatelessWidget {
             color: AppColors.kSecondaryColor,
           ))
 
-      ), child: const Text("Enter",style: Styles.textStyle16,),
+      ), child: const Text("Enter 🍦",style: Styles.textStyle16,),
     );
   }
 }

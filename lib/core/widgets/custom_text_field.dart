@@ -1,4 +1,5 @@
 import 'package:coffee_app/core/utils/colors.dart';
+import 'package:coffee_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFiled extends StatelessWidget {
@@ -17,34 +18,32 @@ class CustomTextFiled extends StatelessWidget {
   final TextInputType keyboardType;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 55,
-      child: TextFormField(
-        onChanged: onChange,
-        onSaved: onSaved,
-        keyboardType:keyboardType ,
-        validator: (val){
-          if(val?.isEmpty??true){
-            return 'Field is required';
-          }
-          else {
-            return null;
-          }
-        },
-        maxLines: maxLines,
-        cursorColor: AppColors.kPrimaryColor,
-        decoration: InputDecoration(
-            fillColor: AppColors.kLoginTextFieldColor,
-            filled: true,
-            hintText: hint,
-            hintStyle: TextStyle(
-              color: AppColors.kPrimaryColor.withOpacity(0.6),
-              fontSize: 14,
-            ),
-            focusedBorder: buildBorder(border: 24, color: AppColors.kPrimaryColor),
-            enabledBorder: buildBorder(border: 24, color: AppColors.kSecondaryColor),
-            border:buildBorder(border: 24, color: Colors.grey)
-        ),
+    return TextFormField(
+      onChanged: onChange,
+      onSaved: onSaved,
+      keyboardType:keyboardType ,
+      validator: (val){
+        if(val?.isEmpty??true){
+          return 'Field is required';
+        }
+        else {
+          return null;
+        }
+      },
+      maxLines: maxLines,
+      cursorColor: AppColors.kPrimaryColor,
+      decoration: InputDecoration(
+          fillColor: AppColors.kLoginTextFieldColor,
+          filled: true,
+          label: Text(hint!,style: Styles.textStyle16.copyWith(
+            color: AppColors.kPrimaryColor.withOpacity(0.7)
+          ),),
+         errorStyle: Styles.textStyle14.copyWith(fontSize: 12),
+         // labelStyle: Styles.textStyle24,
+
+          focusedBorder: buildBorder(border: 32, color: AppColors.kPrimaryColor),
+          enabledBorder: buildBorder(border: 32, color: AppColors.kSecondaryColor),
+          border:buildBorder(border: 32, color: Colors.grey)
       ),
     );
   }

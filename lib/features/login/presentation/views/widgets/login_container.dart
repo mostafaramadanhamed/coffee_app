@@ -9,13 +9,13 @@ class LoginContainer extends StatelessWidget {
     super.key,
     required this.size,
     required this.emailController,
-    required this.passwordController,
+    required this.passwordController, required this.formKey,
   });
 
   final Size size;
   final TextEditingController emailController;
   final TextEditingController passwordController;
-
+  final GlobalKey<FormState> formKey ;  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,26 +29,29 @@ class LoginContainer extends StatelessWidget {
       ),
       child:  SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            const   Text('Login',style: Styles.textStyle18,),
-            const   SizedBox(height: 38,),
-            CustomTextFiled(hint: 'Email',onChange: (val){
-              emailController.text=val;
+        child: Form(
+          key:formKey ,
+          child: Column(
+            children: [
+              const   Text('Login',style: Styles.textStyle18,),
+              const   SizedBox(height: 38,),
+              CustomTextFiled(hint: 'Email',onChange: (val){
+                emailController.text=val;
 
-            },),
-            const  SizedBox(height: 22,),
-            CustomTextFiled(hint: 'Password',onChange: (val){
-              passwordController.text=val;
-            },),
-            const SizedBox(height: 40,),
-            LoginButton(emailController: emailController, passwordController: passwordController, size: size),
-            const  SizedBox(height: 22,),
-            TextButton(onPressed: (){},
-              style: TextButton.styleFrom(
-                foregroundColor: AppColors.kSecondaryColor,
-              ), child: const Text('Don\'t have an account?',style: Styles.textStyle14,),),
-          ],
+              },),
+              const  SizedBox(height: 22,),
+              CustomTextFiled(hint: 'Password',onChange: (val){
+                passwordController.text=val;
+              },),
+              const SizedBox(height: 40,),
+              LoginButton(emailController: emailController, passwordController: passwordController, size: size, formKey: formKey,),
+              const  SizedBox(height: 22,),
+              TextButton(onPressed: (){},
+                style: TextButton.styleFrom(
+                  foregroundColor: AppColors.kSecondaryColor,
+                ), child: const Text('Don\'t have an account?',style: Styles.textStyle14,),),
+            ],
+          ),
         ),
       ),
     );
