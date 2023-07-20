@@ -10,24 +10,75 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Padding(
-      padding:EdgeInsets.symmetric(horizontal: 32),
+    return   Padding(
+      padding:const EdgeInsets.symmetric(horizontal: 32),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 45,
           ),
-          TopRowHomeView(),
-          SizedBox(
+          const TopRowHomeView(),
+          const SizedBox(
             height: 20,
           ),
-          WelcomeText(),
-          SizedBox(
+          const WelcomeText(),
+          const SizedBox(
             height: 20,
           ),
-          CustomTextFiled(hint: '  🔎 Search ')
+          const CustomTextFiled(hint: '  🔎 Search '),
+          const SizedBox(
+            height: 15,
+          ),
+          Text('Categories',style: GoogleFonts.lato(fontSize: 20,fontWeight: FontWeight.bold,color: AppColors.kPrimaryColor),),
+          const SizedBox(
+            height: 6,
+          ),
+          Row(
+          children: [
+            CategoryItem(),
+            CategoryItem(),
+            CategoryItem(),
+          ],
+          )
         ],
+      ),
+    );
+  }
+}
+
+class CategoryItem extends StatefulWidget {
+  const CategoryItem({
+    super.key,
+  });
+
+  @override
+  State<CategoryItem> createState() => _CategoryItemState();
+}
+
+class _CategoryItemState extends State<CategoryItem> {
+   bool isClicked=false;
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: InkWell(
+        onTap: (){
+          setState((){
+            isClicked =! isClicked;
+          });
+        },
+        child: Container(
+          margin: EdgeInsets.only(right: 5),
+          height: 35,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+           color: isClicked?AppColors.kSecondaryColor:AppColors.kCategoriesRowColor,
+            borderRadius: BorderRadius.circular(32),
+          ),
+          child: Text('Coffee',style: Styles.textStyle14.copyWith(
+            color: isClicked?AppColors.kFirstGradientColor:AppColors.kPrimaryColor ,
+          ),),
+        ),
       ),
     );
   }

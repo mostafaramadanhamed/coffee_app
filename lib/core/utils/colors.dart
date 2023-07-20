@@ -8,4 +8,5 @@ abstract class AppColors{
   static const kSecondaryColor= Color(0xff846046);
   static const kLoginContainerColor= Color(0xffFBF1E7);
   static const kLoginTextFieldColor= Color(0xffFFFFFF);
+  static const kCategoriesRowColor= Color(0xffF9EBDF);
 }
