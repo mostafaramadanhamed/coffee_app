@@ -1,4 +1,4 @@
-import 'package:coffee_app/features/splash/presentation/widgets/landing_view_body.dart';
+import 'package:coffee_app/features/splash/presentation/views/widgets/landing_view_body.dart';
 import 'package:flutter/material.dart';
 
 class LandingView extends StatelessWidget {

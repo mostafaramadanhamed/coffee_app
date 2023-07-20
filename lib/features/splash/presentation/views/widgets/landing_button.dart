@@ -2,8 +2,8 @@ import 'package:coffee_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/utils/string.dart';
-import '../../../../core/utils/styles.dart';
+import '../../../../../core/utils/string.dart';
+import '../../../../../core/utils/styles.dart';
 
 
 class LandingButton extends StatelessWidget {

@@ -1,7 +1,6 @@
 import 'package:coffee_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import '';
-import '../../../../core/utils/string.dart';
+import '../../../../../core/utils/string.dart';
 class AnimatedText extends StatelessWidget {
   const AnimatedText({
     super.key,
