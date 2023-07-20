@@ -76,6 +76,7 @@ class _CategoryItemState extends State<CategoryItem> {
             borderRadius: BorderRadius.circular(32),
           ),
           child: Text('Coffee',style: Styles.textStyle14.copyWith(
+            fontSize: 13,
             color: isClicked?AppColors.kFirstGradientColor:AppColors.kPrimaryColor ,
           ),),
         ),
