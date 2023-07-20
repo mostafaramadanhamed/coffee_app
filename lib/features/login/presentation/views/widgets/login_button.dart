@@ -25,7 +25,7 @@ class LoginButton extends StatelessWidget {
     return TextButton(onPressed: () {
       if(formKey.currentState!.validate()){
       if (emailController.text == 'mo' && passwordController.text == '00') {
-        GoRouter.of(context).push(AppStrings.kHomeRoute);
+        GoRouter.of(context).push(AppStrings.kMainRoute);
       }
     }
     },

@@ -1,5 +1,6 @@
 import 'package:coffee_app/core/utils/string.dart';
 import 'package:coffee_app/features/home/presentation/views/home_view.dart';
+import 'package:coffee_app/features/home/presentation/views/main_view.dart';
 import 'package:coffee_app/features/login/presentation/views/login_view.dart';
 import 'package:coffee_app/features/splash/presentation/views/landing_view.dart';
 import 'package:go_router/go_router.dart';
@@ -13,7 +14,7 @@ abstract class AppRouter{
     GoRoute(path: '/',builder: (context,state)=>const SplashView() ,),
     GoRoute(path: AppStrings.kLandingRoute,builder: (context,state)=>const LandingView()),
     GoRoute(path: AppStrings.kLoginRoute,builder: (context,state)=>const LoginView()),
-    GoRoute(path: AppStrings.kHomeRoute,builder: (context,state)=>const HomeView()),
+    GoRoute(path: AppStrings.kMainRoute,builder: (context,state)=>const MainView()),
     // GoRoute(path: '/',builder: (context,state)=>const SplashView() ,),
   ],);
 }
