@@ -1,4 +1,5 @@
 import 'package:coffee_app/core/utils/colors.dart';
+import 'package:coffee_app/core/utils/string.dart';
 import 'package:coffee_app/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,22 +13,13 @@ class MainView extends StatefulWidget {
 
 class _MainViewState extends State<MainView> {
   int _currentIndex = 0;
-  final List<Widget> pages = [
-    const HomeView(),
-    Text('data'),
-    Text('data'),
-    Text('data'),
-    // BookmarkScreen(),
-    // FavoriteScreen(),
-    // NewRecipeScreen(),
-    // const SettingScreen(),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color:Color(0xffF6F6F6),
+          color:const Color(0xffF6F6F6),
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(25.0),
             topRight: Radius.circular(25.0),
@@ -71,12 +63,12 @@ class _MainViewState extends State<MainView> {
                           ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_pin),
-              label: 'Person',
+              label: 'Profile',
                           ),
           ],
         ),
       ),
-      body: pages[_currentIndex],
+      body: AppStrings.kPages[_currentIndex],
     );
   }
 }
